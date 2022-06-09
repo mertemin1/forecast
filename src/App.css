@@ -5,6 +5,8 @@
   min-width: 100vw;
   min-height: 100vh;
   background-image:url("./source/background.png") ;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow-x: auto;
 
 }

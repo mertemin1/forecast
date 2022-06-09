@@ -433,6 +433,10 @@ function App() {
     fetch(query)
     .then(req => {return req.json()})
     .then(request => {
+      console.log(request)
+      if(request.cod == "404"){
+        return 0;
+      }
       setWeatherData(request)
     })
     .then(()=>{
