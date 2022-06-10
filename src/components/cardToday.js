@@ -19,7 +19,7 @@ function Card1(props){
         
             
             <div className='other-div-container'>
-                    <div className='other-div other-div-2'>
+                    <div className='other-div '>
                         <div className='other-line'>
                             <p>rüzgar hızı:</p>{props.dataObj.wind.speed}m/s
                         </div>
@@ -28,7 +28,7 @@ function Card1(props){
                             <p>derecesi:</p>{props.dataObj.wind.deg}
                         </div>
                     </div>
-                    <div className='other-div other-div-2'>
+                    <div className='other-div '>
                         <div className='other-line'>
                             <p>nem: </p>{props.dataObj.main.humidity}%
                         </div>

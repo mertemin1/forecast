@@ -1,5 +1,5 @@
 .main{
-    color: rgb(49, 49, 49);
+    color: rgb(255, 255, 255);
     padding-bottom: 2vh;
     padding-left: 2vw;
     padding-right: 2vw;
@@ -33,13 +33,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgba(63, 89, 167, 0.5);
-    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    
     margin-top: 1vh;
     color: white;
     font-size: 0.8em;
+    line-height: 0.8em;
     line-height: 0;
     min-width: 200px;
+    padding: 0;
+    
     
 }
 
@@ -48,12 +51,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0 1vw 0 1vw;
 }
 .other-line>p{
     font-size: 1em;
 }
 .city-p{
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    padding: 0;
+    margin: 5px;
+}
+.city-div{
+    padding: 0;
     margin: 0;
 }

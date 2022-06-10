@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Card1 from './components/cardToday';
 import Card2 from './components/cardNext';
+import background from "./source/background.png"
 function App() {
   const apikey = "55cf16827f2aff0a48a74fb6184c285c"
   const [input,setInput] = useState("Istanbul")
@@ -443,7 +444,7 @@ function App() {
       fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&lang=tr&appid=${apikey}`)
       .then(req=>{return req.json()})
       .then(i=>{
-        setWeatherWeek(i.list.slice(0,7))
+        setWeatherWeek(i.list.slice(0,6))
       })
     })
     .then(()=>{
@@ -477,25 +478,25 @@ function App() {
 
   return (
     <div className="App">
+    <img className='bg-img' src={background}/>
       <div className='input-div'>
-        <input className='input-text' type="text" 
-        onChange={(e)=>(setInput(e.target.value))}/>
-        <button className='input-btn' onClick={findCity}>Ara</button>
-      </div>
-     <div className='data-container'>
-      <Card1 dataObj = {weatherData} dataIcon = {weathericon}/>
-        <div className='scroll-box'>
-          <div className='scroll-box-wrapper'>
-            <div className='scroll-box-container'>
-              {weatherWeek.map((i)=>{
-                return(
-                  <Card2 dataObj={i} key={Math.floor(Math.random()*1000000)}  dataIcon ={weekIcon[weatherWeek.indexOf(i)]}/>
-                )
-                })}
-            </div>
-          </div>
+          <input className='input-text' type="text" 
+          onChange={(e)=>(setInput(e.target.value))}/>
+          <button className='input-btn' onClick={findCity}>Ara</button>
         </div>
-     </div>
+      <div className='data-container'>
+        <Card1 dataObj = {weatherData} dataIcon = {weathericon}/>
+          <div className='scroll-box'>
+       
+                {weatherWeek.map((i)=>{
+                  return(
+                    <Card2 dataObj={i} key={Math.floor(Math.random()*1000000)}  dataIcon ={weekIcon[weatherWeek.indexOf(i)]}/>
+                  )
+                  })}
+            
+          </div>
+      </div>
+    
     </div>
   );
 }
